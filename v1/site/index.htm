@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Billetterie Concert</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <h1>Concert Test</h1>
+  <p>Les billets seront disponibles sous peu...</p>
+
+  <div id="file-attente">
+    <p id="position-file">Calcul de votre position dans la file...</p>
+    <div id="barre-progression">
+      <div id="progression"></div>
+    </div>
+  </div>  
+
+  <button id="acheter" style="display: none;">Acheter maintenant</button>
+
+  <div id="loader" style="display: none;">
+    <p>Chargement...</p>
+    <div class="spinner"></div>
+  </div>
+  
+
+  <form id="formulaire" style="display: none;">
+    <label>Nom : <input type="text" name="nom" required></label><br>
+    <label>Prénom : <input type="text" name="prenom" required></label><br>
+    <label>Email : <input type="email" name="email" required></label><br>
+    <h1>Sélection des billets</h1>
+
+    <div id="categories-container"></div>   
+    <label>Numéro de carte bancaire :
+        <input type="text" name="cb" pattern="\d{16}" maxlength="16" required placeholder="1234 5678 9012 3456">
+      </label><br>
+      
+      <label>Date d’expiration :
+        <input type="month" name="expiration" required>
+      </label><br>
+      
+      <label>CVV :
+        <input type="text" name="cvv" pattern="\d{3}" maxlength="3" required placeholder="123">
+      </label><br>      
+
+    <button type="submit">Valider l'achat</button>
+  </form>
+  
+  <div id="erreur" style="display: none; color: red; margin-top: 10px;">
+    ❌ Merci de remplir correctement tous les champs.
+  </div>  
+
+  <div id="confirmation" style="display: none;">
+    <h2>✅ Achat confirmé !</h2>
+  </div>
+</body>
+</html>
